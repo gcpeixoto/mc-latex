@@ -1,0 +1,44 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath,amsfonts,bm}
+\usepackage[utf8x]{inputenc}
+\usepackage{hyperref}
+
+\title{MC: Conhecendo o \LaTeX: usos, dicas e práticas -- DESAFIO}
+\author{Gustavo Oliveira}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\textbf{Escreva as seguintes equações em Latex com Markdown usando o \url{https://stackedit.io}}
+
+\begin{subequations}
+\begin{eqnarray}
+d_{ij} &=& \sqrt{ ({\bf x}_i - {\bf \mu}_i)^T {\bf \Sigma}({\bf x}_j - {\bf \mu}_j) } \label{eq:mahal} \\ % (1.26) Mahalanobis
+%--
+\phi_1(v) &=& \dfrac{1}{\sqrt{2\pi}}\int_{-\infty}^v \exp\left( \dfrac{-x^2}{2}\right) \, dx \label{eq:ativ1} \\ % funcao ativacao 
+%--
+\phi_2(v) &=& \dfrac{2}{\pi}\tan^{-1}(v) \label{eq:ativ2} \\ % funcao ativacao 2 
+%--
+{\bf W}(k) &=&
+\begin{bmatrix}
+w_{11}(k) & w_{12}(k) &\ldots & w_{1m}(k) \\
+w_{21}(k) & w_{22}(k) & \ldots & w_{2m}(k) \\
+\vdots & \vdots & \ddots & \vdots \\ 
+w_{m1}(k) & w_{m2}(k) &\ldots& w_{mm}(k)
+\end{bmatrix} \label{eq:matrizpeso} \\ % matriz de pesos 
+%--
+\mathcal{E}({\bf w}) &=& \frac{1}{2}E_{\mathcal{T}}[\epsilon^2] + \frac{1}{2}E_{\mathcal{T}}[(f({\bf x}) - F({\bf x},\mathcal{T}))^2] \label{eq:custo} \\ % funcao de custo
+\mathfrak{R} &=& c_{11}p_1\int_{\mathfrak{X}_1} f_{\bm X}({\bm x} \mid \mathcal{C}_1 ) d{\bm x} + c_{22}p_2\int_{\mathfrak{X}_2} f_{\bm X}({\bm x} \mid \mathcal{C}_2 ) d{\bm x} \label{eq:risco} \\ 
+\Delta w_{ij}(n) &=& - \eta \dfrac{\partial \mathfrak{E}(n)}{\partial w_{ji}(n)} \label{eq:regradelta} \\
+J({\bf w}) &=& \dfrac{ {\bf w}^T {\bf C}_b {\bf w} }{ {\bf w}^T {\bf C}_t {\bf w} } \label{eq:fischer} \\ % criterio de Fischer
+\beta(n) &=& \frac{{\bf r}^T(n){\bf r}(n) }{{\bf r}^T(n-1){\bf r}(n-1)} \label{eq:fletcherreeves} \\
+D^{2k+1} &=& \nabla(\nabla^2)^k \\ 
+\iiint || \vec{F} ||_3 \nabla(\vec{v}) &=& \nabla \times \vec{u} + \nabla \cdot \vec{v}(\vec{u}) 
+\end{eqnarray}
+\end{subequations}
+
+\clearpage 
+
+\end{document}

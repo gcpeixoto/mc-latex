@@ -1,0 +1,3 @@
+No. de camadas,conexão nodal,conectividade
+única,feedforward (ou acíclica), fracamente conectada
+múltiplas,feedback (ou cíclica), completamente conectada

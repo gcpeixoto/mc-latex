@@ -1,0 +1,92 @@
+% bloco de código formatado
+\usepackage{listings}
+\usepackage{xcolor}
+ 
+ % define cores como triplas (r,g,b) 0 < r,g,b < 1.
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.86,0.93,0.96}
+ 
+\lstdefinestyle{mycode}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+ 
+\lstset{style=mycode}
+
+
+% links no arquivo
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+ 
+\urlstyle{same}
+
+% efeito de papel rasgado 
+
+\usepackage{framed}
+\usepackage{tikz}
+\usepackage[margin=1cm]{geometry}% for screen preview
+\usetikzlibrary{decorations.pathmorphing,calc,shadows.blur,shadings}
+\pgfmathsetseed{1} % To have predictable results
+% Define a background layer, in which the parchment shape is drawn
+\pgfdeclarelayer{background}
+\pgfsetlayers{background,main}
+
+% This is the base for the fractal decoration. It takes a random point between the start and end, and
+% raises it a random amount, thus transforming a segment into two, connected at that raised point
+% This decoration can be applied again to each one of the resulting segments and so on, in a similar
+% way of a Koch snowflake.
+\pgfdeclaredecoration{irregular fractal line}{init}
+{
+  \state{init}[width=\pgfdecoratedinputsegmentremainingdistance]
+  {
+    \pgfpathlineto{\pgfpoint{random*\pgfdecoratedinputsegmentremainingdistance}{(random*\pgfdecorationsegmentamplitude-0.02)*\pgfdecoratedinputsegmentremainingdistance}}
+    \pgfpathlineto{\pgfpoint{\pgfdecoratedinputsegmentremainingdistance}{0pt}}
+  }
+}
+
+% define some styles
+\tikzset{
+   paper/.style={draw=black!10, blur shadow,
+                 lower left=black!20, upper left=black!15, upper right=white, lower right=black!10},
+   irregular border/.style={decoration={irregular fractal line, amplitude=0.2},
+           decorate,
+     },
+   ragged border/.style={ decoration={random steps, segment length=7mm, amplitude=2mm},
+           decorate,
+   }
+}
+
+% Macro to draw the shape behind the text, when it fits completly in the
+% page
+\def\tornpaper#1{
+\tikz{
+  \node[inner sep=1em] (A) {#1};  % Draw the text of the node
+  \begin{pgfonlayer}{background}  % Draw the shape behind
+  \fill[paper] % recursively decorate the bottom border
+        decorate[irregular border]{decorate{decorate{decorate{decorate[ragged border]{
+        ($(A.south east) - (0, random*5mm)$) -- ($(A.south west) - (0, random*5mm)$)
+        }}}}}
+        -- (A.north west) -- (A.north east) -- cycle;
+  \end{pgfonlayer}}
+}
