@@ -1,10 +1,10 @@
-# Mini-Curso: Conhecendo o $\LaTeX$: usos, dicas e práticas
+# Mini-Curso: Conhecendo o \LaTeX: usos, dicas e práticas
 
 **Prof. Gustavo Oliveira, UFPB/CI/DCC, gustavo.oliveira@ci.ufpb.br**
 
 **Repo:** _mc-latex_
 
-**Sobre:** material desenvolvido para mini-curso iniciático em $\LaTeX{}$ com foco na produção de artigos científicos.
+**Sobre:** material desenvolvido para mini-curso iniciático em LaTeX com foco na produção de artigos científicos.
 
 **Conteúdo:** Introdução à linguagem tipográfica LaTeX. Ambientes de compilação, edição e compartilhamento online. Edição básica de conteúdo (elementos textuais diversos, fórmulas matemáticas, referências cruzadas, tabelas e figuras). Ênfase em preparação de textos acadêmicos de baixa complexidade (artigos científicos, relatórios homeworks e notas). Noções de Markdown e Mathjax. Sessão prática com apoio tutorial.
 
