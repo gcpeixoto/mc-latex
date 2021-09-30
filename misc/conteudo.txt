@@ -1,0 +1,40 @@
+% INTRODUÇÃO
+\IEEEraisesectionheading{\section{Introdução}\label{sec:introducao}}
+
+O cérebro humano contém em torno de 10\textsuperscript{11} neurônios. 
+Cada um deles processa informações e se conecta com 
+outros milhares de neurônios continuamente ou de modo 
+paralelo. A estrutura individual de suas conexões e 
+o comportamento conjunto destes nós naturias formam 
+a base para o estudo das \textit{redes neurais artificiais} - RNAs.
+A Figura \ref{fig:neuronio} contém uma ilustração simplificada
+para um neurônio biológico. bem como seu modelo associado. 
+Este modelo de neurônio artificial foi proposto por 
+McCulloch e Pitts \cite{MccullothAndPitts} em 1943 e 
+ficou conhecido como MCP.
+
+\subsection{Aprendizagem: o perceptron}
+
+RNAs possuem a capacidade de aprender por exemplos e tomar 
+decisões sobre aquilo que aprendem. Para tanto, necessitam 
+de um conjunto de procedimentos bem definidos que adaptam 
+seus parâmetros, ou seja, um \textbf{algoritmo de aprendizagem}. 
+Dessa maneira, define-se que
+
+\begin{quotation}
+Aprendizagem é o processo pelo qual os parâmetros de uma rede
+neural são ajustados através de uma forma continuada de estímulo
+pelo ambiente no qual a rede está operando, sendo o tipo específico 
+de aprendizagem realizada definido pela maneira particular 
+como ocorrem os ajustes realizados nos parâmetros.
+\end{quotation}
+
+Desde a década de 1940, muito se aperfeiçoou na compreensão 
+das redes artificiais. Em 1958, Frank Rosenblatt introduziu 
+um novo modelo para o neurônio biológico formado por duas
+unidades básicas: os \emph{nós} MCP e uma regra de aprendizado.
+Este modelo foi denominado \texttt{perceptron}, o qual é utilizado
+até hoje. Então, de meados da década de 1970 para cá, grande
+progresso foi atingido com aprendizagem de máquina. 
+Vejamos, por exemplo, a linha do tempo mostrada na 
+Figura \ref{fig:historico}. 
